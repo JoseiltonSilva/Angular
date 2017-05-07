@@ -1,0 +1,33 @@
+<h2>
+  *ngIf
+</h2>
+<div *ngIf="cursos.length > 0" >
+  <h3>Lista de cursos do Portal</h3>
+</div> 
+<div *ngIf="cursos.length == 0" >
+  <h3>Não há cursos para exibir</h3>
+</div> 
+
+<div *ngIf="mostrarCursos" >
+  <h3>Lista de cursos do Portal</h3>
+</div> 
+<div *ngIf="!mostrarCursos" >
+  <h3>Não há cursos para exibir</h3>
+</div> 
+
+<div [hidden]="!mostrarCursos" >
+  <h3>Lista de cursos do Portal</h3>
+</div> 
+<div [hidden]="mostrarCursos" >
+  <h3>Não há cursos para exibir</h3>
+</div> 
+
+<button (click)="mostrarEsconderCursos()">Mostrar ou Esconder Cursos</button>
+
+<template [ngIf]="mostrarCursos">
+  <h3>Lista de cursos do portal</h3>
+</template >
+
+<div template="ngIf !mostrarCursos" >
+  <h3>Não há cursos para exibir</h3>
+</div>
